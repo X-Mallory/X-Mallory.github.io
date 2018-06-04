@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="比特币,区块链," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="X-Mallory" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="区块链作为当前一个比较热门的新概念，一直不是很懂，但其中涉及到密码学安全的应用，遂网上查找资料，结合区块链技术在比特币上的应用，将自己的理解分享出来，也算是对自己的学习做一记录，如有错误，请多指点！">
+<meta name="keywords" content="比特币,区块链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从比特币开始学习区块链">
+<meta property="og:url" content="http://yoursite.com/2018/06/03/从比特币开始学习区块链/index.html">
+<meta property="og:site_name" content="X-Mallory">
+<meta property="og:description" content="区块链作为当前一个比较热门的新概念，一直不是很懂，但其中涉及到密码学安全的应用，遂网上查找资料，结合区块链技术在比特币上的应用，将自己的理解分享出来，也算是对自己的学习做一记录，如有错误，请多指点！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/06/03/从比特币开始学习区块链/比特币交易.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/06/03/从比特币开始学习区块链/Hash.PNG">
+<meta property="og:updated_time" content="2018-06-04T16:32:18.561Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从比特币开始学习区块链">
+<meta name="twitter:description" content="区块链作为当前一个比较热门的新概念，一直不是很懂，但其中涉及到密码学安全的应用，遂网上查找资料，结合区块链技术在比特币上的应用，将自己的理解分享出来，也算是对自己的学习做一记录，如有错误，请多指点！">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/03/从比特币开始学习区块链/比特币交易.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/03/从比特币开始学习区块链/"/>
+
+
+
+
+
+  <title>从比特币开始学习区块链 | X-Mallory</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">X-Mallory</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Goals determine what you are going to be</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "f409b7df"
+    });
+  daovoice('update');
+  </script>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/从比特币开始学习区块链/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小小苏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/640.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="X-Mallory">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">从比特币开始学习区块链</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T23:11:44+08:00">
+                2018-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/密码学应用/" itemprop="url" rel="index">
+                    <span itemprop="name">密码学应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>区块链作为当前一个比较热门的新概念，一直不是很懂，但其中涉及到密码学安全的应用，遂网上查找资料，结合区块链技术在比特币上的应用，将自己的理解分享出来，也算是对自己的学习做一记录，如有错误，请多指点！</p>
+<hr>
+<a id="more"></a>
+<h3 id="比特币"><a href="#比特币" class="headerlink" title="比特币"></a>比特币</h3><p>在说区块链之前，首先来说一下比特币，不同的人可能对于比特币会有不同的理解，借用网上一位网友比较简单直白的解读：</p>
+<blockquote>
+<ul>
+<li>比特币是一种基于分布式网络的数字货币。</li>
+<li>比特币系统（广义的比特币）则是用来构建这种数字货币的网络系统，是一个分布式的点对点网络系统。</li>
+</ul>
+</blockquote>
+<p>在比特币的世界，没有属于个人的账户的概念，只有比特币钱包，所谓的比特币钱包，其实可以简单理解为一个<strong>公钥</strong>。由于电子计算机内的任何东西都是可以零成本复制的，所以就必须采用<strong>非对称密码技术</strong>解决这个问题。<br>简单点说，一个钱包的含义就是“任何人都可以放钱进去，但只有你自己可以拿钱出来”，你之所以比别人多一个拿钱出来花的权力，是因为你持有和钱包公钥对应的私钥！请务必记住，私钥就是你打开钱包花钱的钥匙，一旦被别人窃取，钱也就是别人的了，一旦丢失或者销毁，钱包里的钱也就相当于跟着销毁了，就好像现实中你把纸钞撕毁焚烧了一样。  </p>
+<p>在比特币世界，所有能花费的钱被统一表示成UTXO(即Unspent Transaction Output)，该UTXO和一个钱包地址关联，你要想知道你还有多少钱可以花，你只能遍历你所拥有的钱包，然后把和该钱包关联的UTXO累加在一起，结果便是你的“账户余额。所有的这一切信息，全部分布式存储在已经达成全网共识的区块链里。<br>UTXO只有唯一的两个来源： </p>
+<blockquote>
+<ul>
+<li>被人转给自己</li>
+<li>自己挖矿所得</li>
+</ul>
+</blockquote>
+<p>比特币交易就是从一个比特币钱包向另一个中转账，每笔交易都有数字签名来保证安全。一个交易一旦发生那么就是对所有人都公开的，当 Alice 想要给 Bob 转币的时候，就用私钥来签署一段信息，其中包括输入，数目和输出这三项前面已经提过的内容。这样，信息广播到比特币网络上，矿工就可以验证这次交易，把交易加入区块链中了,一旦加入区块链成功，也就表示此次交易成功，也表示此次的交易被加入到了分布式的账本中。  </p>
+<p><img src="/2018/06/03/从比特币开始学习区块链/比特币交易.PNG" alt="比特币交易" title="比特币交易"></p>
+<blockquote>
+<ul>
+<li>输入：这里面记录了最初 Alice  拥有的这些币是从哪个地址转给她的，假设她是从她的朋友 Eve 那里得到的币。</li>
+<li>数目：这个就是 Alice 到底给 Bob 转了多少个比特币。</li>
+<li>输出：Bob 的比特币地址。</li>
+</ul>
+</blockquote>
+<h3 id="比特币的运行原理"><a href="#比特币的运行原理" class="headerlink" title="比特币的运行原理"></a>比特币的运行原理</h3><p>正如我们认识的银行那样，在银行系统的数据库里记录着跟我们身份id对应的财产，我们暂且把他叫做账本，如张三的卡10月1日转入1w, 余额10w。<br>比特币系统也同样有这样的账本，不同银行由单一的组织负责记录,比特币的记账由所有运行系统的人（即节点，可以简单理解为一台电脑）共同参与记录，每个节点都保存（同步）一份完整的账本。同时使用简单多数原则，来保证账本的一致性。举个例子：如果有人在自己电脑上把自己的余额从1万改为1百万，他这个账本和大多数人的账本不一致，就会被比特币系统认为是无效的。</p>
+<h3 id="一个公共的分布式总帐—-区块链"><a href="#一个公共的分布式总帐—-区块链" class="headerlink" title="一个公共的分布式总帐—-区块链"></a>一个公共的分布式总帐—-区块链</h3><p>切入主题,区块链技术,我们首先考虑下面两种情况:<br>情况一:</p>
+<blockquote>
+<p> 想象有一个100台的分布式数据库集群，现在的情况是这100个节点实际上的拥有者是一个机构，并且所有节点处在该机构的内网当中，所以这个机构想让这100个数据库节点干嘛就干嘛，换句话说这100个节点之间是处于一个可信任的环境，并且受控于一个实体，这个实体具有绝对仲裁分配权。</p>
+</blockquote>
+<p>情况二:</p>
+<blockquote>
+<p>想象这100个节点分别归不同的人所有，且每个人的节点数据都是一样的，即完全冗余，并且所有的节点是处在广域网当中，换句话说就是这100个节点之间是不信任的，且不存在一个实体，它拥有绝对仲裁权。</p>
+</blockquote>
+<p>现在考虑第二种情况的话，采用什么样的算法（共识模型）能够提供一个可信任的环境，使得：</p>
+<ul>
+<li>每个节点交换数据过程不被篡改；交换历史记录不可被篡改；</li>
+<li>每个节点的数据会同步到最新数据，且承认经过共识的最新数据；</li>
+<li>基于少数服从多数的原则，整体节点维护的数据本身客观反映了交换历史。</li>
+</ul>
+<p><strong>区块链本质上就是要解决以上第二种情况的一种技术方案，更确切的说应该叫分布式的冗余的链式总帐本方案。</strong>   </p>
+<p>要解决第二种情况的问题，那么区块链技术应该要具有这样的一些特性：</p>
+<blockquote>
+<ul>
+<li>包含一个分布式数据库</li>
+<li>区块链只对添加有效，对其他操作无效</li>
+<li>分布式数据库作为区块链的物理载体，所有核心节点都应包含该条区块链数据的全副本</li>
+<li>共识过程（consensus progress）是演化稳定的，所谓共识过程，指的是面对不同节点的矛盾数据，不会导致崩溃，关于矛盾数据，不同节点间最终应该能达成共识</li>
+<li>记账节点要求拜占庭将军问题可解</li>
+<li>基于非对称加密的公私钥验证</li>
+</ul>
+</blockquote>
+<p>我们继续回到比特币上，我们继续看，结合前文说的比特币的运行原理，其中说到比特币系统需要维护一个由所有节点共同维护的账本，它是如何维护的呢，这就用到了区块链技术：  </p>
+<h3 id="比特币区块链记账方法"><a href="#比特币区块链记账方法" class="headerlink" title="比特币区块链记账方法"></a>比特币区块链记账方法</h3><p>假设有一个账页序号为0的账页交易记录如下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">账号</th>
+<th style="text-align:center">入账</th>
+<th style="text-align:center">出账</th>
+<th style="text-align:center">余额</th>
+<th style="text-align:center">备注说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">张三</td>
+<td style="text-align:center">1600</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1600</td>
+<td style="text-align:center">XXX转入</td>
+</tr>
+<tr>
+<td style="text-align:center">李四</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">600</td>
+<td style="text-align:center">1200</td>
+<td style="text-align:center">转给XXX</td>
+</tr>
+</tbody>
+</table>
+<p>记账时间为：2017-10-22 10:22:02</p>
+<p>区块链记账是会把账页信息（包含序号、记账时间、交易记录）作为原始信息进行Hash, 得到一个Hash值，如：787635ACD, 用函数表示为：  </p>
+<p><em>Hash(序号0、记账时间、交易记录) = 787635ACD</em></p>
+<p>账页信息和Hash值组合在一起就构成了第一个区块。</p>
+<p><strong>比特币系统里约10分钟记一次账，即每个区块生成时间大概间隔10分钟</strong></p>
+<p>在记第2个账页的时候，会把上一个块的Hash值和当前的账页信息一起作为原始信息进行Hash,即：</p>
+<p><em>Hash(上一个Hash值、序号1、记账时间、交易记录) = 456635BCD</em>  </p>
+<p>这样第2个区块不仅包含了本账页信息，还间接的包含了第一个区块的信息。依次按照此方法继续记账，则最新的区块总是间接包含了所有之前的账页信息。<br>所有这些区块组合起来就形成了区块链，这样的区块链就构成了一个便于验证（只要验证最后一个区块的Hash值就相当于验证了整个账本），不可更改（任何一个交易信息的更改，会让所有之后的区块的Hash值发生变化，这样在验证时就无法通过）的总账本。</p>
+<h3 id="记账与挖矿"><a href="#记账与挖矿" class="headerlink" title="记账与挖矿"></a>记账与挖矿</h3><p>上面说到记账是把交易记录、交易时间、账本序号、上一个Hash值等信息计算Hash打包的过程。我们知道所有的计算和存贮是需要消耗计算机资源的，既然要付出成本，那节点为什么还要参与记账呢？在中本聪（比特币之父）的设计里，完成记账的节点可以获得系统给与的一定数量的比特币奖励，这个奖励的过程也就是比特币的发行过程，因此大家形象的把记账称为“挖矿”。</p>
+<p>由于记账是有奖励的，每次记账都可以给自己凭空增加一定数量的个比特币（当前是12.5比特币，每个比特币是4万人民币以上），因此就出现大家争相记账，大家一起记账就会引起问题：出现记账不一致的问题，比特币系统引入工作量证明来解这个问题，规则如下：</p>
+<ul>
+<li>一段时间内（10分钟左右，具体时间会与密码学难题难度相互影响）只有一人可以记账成功</li>
+<li>通过解决密码学难题（即工作量证明）竞争获得唯一记账权</li>
+<li>其他节点复制记账结果<br>不过在进行工作量证明之前，记账节点会做进行如下准备工作：</li>
+<li>收集广播中还没有被记录账本的原始交易信息</li>
+<li>检查每个交易信息中付款地址有没有足够的余额</li>
+<li>验证交易是否有正确的签名</li>
+<li>把验证通过的交易信息进行打包记录</li>
+<li>添加一个奖励交易：给自己的地址增加12.5比特币<br>如果节点争夺记账权成功的话，就可以得到12.5比特币的奖励。 </li>
+</ul>
+<h3 id="关于工作量证明"><a href="#关于工作量证明" class="headerlink" title="关于工作量证明"></a>关于工作量证明</h3><p>每次记账的时候会把上一个块的Hash值和当前的账页信息一起作为原始信息进行Hash。<br>如果仅仅是这样，显然每个人都可以很轻松的完成记账。<br>为了保证10分钟左右只有一个人可以记账，就必须要提高记账的难度，使得Hash的结果必须以若干个0开头。同是为了满足这个条件，在进行Hash时引入一个随机数变量。</p>
+<blockquote>
+<p>Hash(上一个Hash值，交易记录集) = 456635BCD</p>
+</blockquote>
+<blockquote>
+<p>Hash(上一个Hash值，交易记录集，随机数) = 0000aFD635BCD</p>
+</blockquote>
+<p>我们知道改变Hash的原始信息的任何一部分，Hash值也会随之不断的变化，因此在运算Hash时，不断的改变随机数的值，总可以找的一个随机数使的Hash的结果以若干个0开头，率先找到随机数的节点就获得此次记账的唯一记账权。  </p>
+<p><img src="/2018/06/03/从比特币开始学习区块链/Hash.PNG" alt="比特币交易" title="挖矿"></p>
+<p> 在节点成功找到满足的Hash值之后，会马上对全网进行广播打包区块，网络的节点收到广播打包区块，会立刻对其进行验证。<br>如果验证通过，则表明已经有节点成功解迷，自己就不再竞争当前区块打包，而是选择接受这个区块，记录到自己的账本中，然后进行下一个区块的竞争猜谜。<br>网络中只有最快解谜的区块，才会添加的账本中，其他的节点进行复制，这样就保证了整个账本的唯一性。<br>假如节点有任何的作弊行为，都会导致网络的节点验证不通过，直接丢弃其打包的区块，这个区块就无法记录到总账本中，作弊的节点耗费的成本就白费了，因此在巨大的挖矿成本下，也使得矿工自觉自愿的遵守比特币系统的共识协议，也就确保了整个系统的安全。</p>
+<h5 id="拜占庭将军问题"><a href="#拜占庭将军问题" class="headerlink" title="拜占庭将军问题"></a>拜占庭将军问题</h5><p>拜占庭位于如今的土耳其的伊斯坦布尔，是东罗马帝国的首都。由于当时拜占庭罗马帝国国土辽阔，为了防御目的，因此每个军队都分隔很远，将军与将军之间只能靠信差传消息。在战争的时候，拜占庭军队内所有将军和副官必须达成一致的共识，决定是否有赢的机会才去攻打敌人的阵营。但是，在军队内有可能存有叛徒和敌军的间谍，左右将军们的决定又扰乱整体军队的秩序。在进行共识时，结果并不代表大多数人的意见。这时候，在已知有成员谋反的情况下，其余忠诚的将军在不受叛徒的影响下如何达成一致的协议，拜占庭问题就此形成。<br>区块链中，可以将这里的叛徒看成是一台有故障不断向其他节点发出错误信息的计算机，或是一台计算机，为谋取暴利，做了一份假的账本，不断向其他节点发送。  </p>
+<h5 id="公钥密码体制-public-key-cryptography"><a href="#公钥密码体制-public-key-cryptography" class="headerlink" title="公钥密码体制(public-key cryptography)"></a>公钥密码体制(public-key cryptography)</h5><p>公钥密码体制分为三个部分，公钥、私钥、加密解密算法，它的加密解密过程如下：<br>加密：通过加密算法和公钥对内容(或者说明文)进行加密，得到密文。加密过程需要用到公钥。<br>解密：通过解密算法和私钥对密文进行解密，得到明文。解密过程需要用到解密算法和私钥。注意，由公钥加密的内容，只能由私钥进行解密，也就是说，由公钥加密的内容，如果不知道私钥，是无法解密的。<br>公钥密码体制的公钥和算法都是公开的(这是为什么叫公钥密码体制的原因)，私钥是保密的。大家都以使用公钥进行加密，但是只有私钥的持有者才能解密。在实际的使用中，有需要的人会生成一对公钥和私钥，把公钥发布出去给别人使用，自己保留私钥。</p>
+<h5 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h5><p>哈希函数在密码学中被用来做消息摘要，一个消息摘唯一对应一个消息或文本，并且这个消息摘要的长度通常是固定的，原始消息或文本中任何微小的改变都将导致消息摘要值的改变，通过消息摘要，可以验证消息的完整性。<br>哈希函数：Hash(原始信息) = 摘要信息<br>原始信息可以是任意的信息, hash之后会得到一个简短的摘要信息<br>哈希函数有几个特点:</p>
+<ul>
+<li>同样的原始信息用同一个哈希函数总能得到相同的摘要信息</li>
+<li>原始信息任何微小的变化都会哈希出面目全非的摘要信息</li>
+<li>从摘要信息无法逆向推算出原始信息<br>举例说明：<br>Hash(张三借给李四100万，利息1%，1年后还本息 …..) = AC4635D34DEF<br>账本上记录了AC4635D34DEF这样一条记录。<br>可以看出哈希函数有4个作用：<blockquote>
+<ul>
+<li>简化信息：很好理解，哈希后的信息变短了。</li>
+<li>标识信息：可以使用AC4635D34DEF来标识原始信息，摘要信息也称为原始信息的id。</li>
+<li>隐匿信息：账本是AC4635D34DEF这样一条记录，原始信息被隐匿。</li>
+<li>验证信息：假如李四在还款时欺骗说，张三只借给李四10万，双方可以用AC4635D34DEF来验证信息 </li>
+</ul>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/比特币/" rel="tag"># 比特币</a>
+          
+            <a href="/tags/区块链/" rel="tag"># 区块链</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/10/心有猛虎-细嗅蔷薇/" rel="next" title="心有猛虎 细嗅蔷薇">
+                <i class="fa fa-chevron-left"></i> 心有猛虎 细嗅蔷薇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/640.jpg"
+                alt="小小苏" />
+            
+              <p class="site-author-name" itemprop="name">小小苏</p>
+              <p class="site-description motion-element" itemprop="description">斯人若彩虹，遇上方知有</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/X-Mallory" target="_blank" title="GitHub">
+                      GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小小苏</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+-->
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/love.js"></script>
